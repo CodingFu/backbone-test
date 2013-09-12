@@ -13,8 +13,7 @@ requirejs.config({
     }
 });
 
-require(["application"], function (application) {
+require(["application"], function (Application) {
    "use strict";
-   
-   application.init();
+   new Application();
 });

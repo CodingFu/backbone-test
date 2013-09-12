@@ -1,1 +1,9 @@
 <p>Welcome to WiserTogether test Backbone application.</p>
+<h2>Conditions</h2>
+<ul>
+    {{#each conditions}}
+        <li>
+            <a href="#/conditions/{{name}}">{{name}}</a>
+        </li>
+    {{/each}}
+</ul>

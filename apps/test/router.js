@@ -1,17 +1,29 @@
 define([
-    "models/condition",
+    "collections/conditions",
     "views/condition",
-    "views/main"], function (Condition, ConditionView, MainView) {
+    "views/main"
+    ], function (
+        conditions,
+        ConditionView,
+        MainView
+    ) {
     "use strict";
     
     var Router = Backbone.Router.extend({
        routes: {
-           "": "main"
+           "": "main",
+           "conditions/:id": "condition"
        },
        
        main: function main() {
-           this.view = new MainView();
-           this.view.render().$el.appendTo("#container");
+           this.view = new MainView({conditions: conditions});
+           $("#container").html(this.view.render().$el);
+       },
+       
+       condition: function condition(slug) {
+           var condition = conditions.findWhere({name: "Aneurysm"});
+           this.view = new ConditionView({model: condition});
+           $("#container").html(this.view.render().$el);
        }
     });
     
