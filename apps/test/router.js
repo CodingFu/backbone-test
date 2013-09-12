@@ -1,4 +1,4 @@
-require([], function () {
+require(["models/condition", "views/condition"], function (Condition, ConditionView) {
     "use strict";
     
     var Router = Backbone.Router.extend({

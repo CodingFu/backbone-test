@@ -7,5 +7,5 @@ define(["router"], function (Router) {
         Backbone.history.start({pushState: true});
     };
     
-    return TestApplication;
+    return new TestApplication();
 });
