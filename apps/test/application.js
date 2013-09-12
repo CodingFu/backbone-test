@@ -4,7 +4,7 @@ define(["router"], function (Router) {
     function TestApplication() {}
     
     TestApplication.prototype.init = function init() {
-        Backbone.history.start({pushState: true});
+        Backbone.history.start();
     };
     
     return new TestApplication();

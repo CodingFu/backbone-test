@@ -1,4 +1,4 @@
-require([], function () {
+define([], function () {
     "use strict";
 
     var Condition = Backbone.Model.extend({

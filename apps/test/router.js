@@ -1,9 +1,17 @@
-require(["models/condition", "views/condition"], function (Condition, ConditionView) {
+define([
+    "models/condition",
+    "views/condition",
+    "views/main"], function (Condition, ConditionView, MainView) {
     "use strict";
     
     var Router = Backbone.Router.extend({
        routes: {
-           
+           "": "main"
+       },
+       
+       main: function main() {
+           this.view = new MainView();
+           this.view.render().$el.appendTo("#container");
        }
     });
     
