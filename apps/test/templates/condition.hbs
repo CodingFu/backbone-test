@@ -1,18 +1,23 @@
 <h2>{{name}}</h2>
 <h3>Treatments</h3>
-<ul class="tabs">
-    {{#each treatments}}
-        <li>
-            <a href="#{{@key}}">
-                {{log @index}}
-                {{display_name}}
-            </a>
-        </li>
-    {{/each}}
-</ul>
-
-{{#each treatments}}
-    <div class="tab-content">
-        {{description}}
+<div class="clearfix">
+    
+    <ul class="tabs">
+        {{#each treatments}}
+            <li>
+                <a href="#{{@key}}">
+                    {{log @index}}
+                    {{display_name}}
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+    
+    <div class="tabs-contents">
+        {{#each treatments}}
+            <div class="tab-content" id="{{@key}}">
+                {{description}}
+            </div>
+        {{/each}}
     </div>
-{{/each}}
+</div>
